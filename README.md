@@ -14,11 +14,8 @@ The goal is to build a simulated robotic arm in Unity 3D, driven by an autonomou
 - Simulation scene with a boat and animated fish assets
 
 **Planned**
-- Autonomous drone in the simulation
 - Odometry and pose estimation using matrix libraries (transformations, state propagation)
 - Kinematics of the arm (forward/inverse) with matrix math
-- Coordinating the drone's estimated pose with the arm's movements
-- Embedded-systems integration
 
 ## Tech stack
 
