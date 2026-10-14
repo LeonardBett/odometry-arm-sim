@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Peche : MonoBehaviour
+public class Grappin : MonoBehaviour
 {
     [SerializeField] private LayerMask layerObjets;
     [SerializeField] private Transform pointAccroche;
@@ -24,11 +24,6 @@ public class Peche : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            objetActuel.transform.position = pointAccroche.position;
-            objetActuel.transform.rotation = pointAccroche.rotation;
-        }
     }
     
     void Attraper(GameObject objet) {
@@ -37,6 +32,8 @@ public class Peche : MonoBehaviour
         Rigidbody rb = objet.GetComponent<Rigidbody>();
         rb.isKinematic = true;
         rb.detectCollisions = false;
+        
+        objet.transform.SetParent(pointAccroche, true);
 
         Animator animator = objet.GetComponent<Animator>();
         if (animator != null)

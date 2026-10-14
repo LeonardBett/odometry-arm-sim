@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 408299791}
   - component: {fileID: 408299795}
   - component: {fileID: 408299796}
+  - component: {fileID: 408299797}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -311,8 +312,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: 0
     upperLimit: 0
-    stiffness: 50000
-    damping: 500
+    stiffness: 100000
+    damping: 5000
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
@@ -337,7 +338,7 @@ ArticulationBody:
     driveType: 0
   m_LinearDamping: 0.05
   m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_JointFriction: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -455,6 +456,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 45
+  baseRobot: {fileID: 408299791}
+  epaule: {fileID: 2123850679}
+  coude: {fileID: 2070800223}
+  poignet: {fileID: 833472876}
+--- !u!114 &408299797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408299789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d1924a3b3a9f043afc4eef5ffadea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   baseRobot: {fileID: 408299791}
   epaule: {fileID: 2123850679}
   coude: {fileID: 2070800223}
@@ -813,8 +830,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -135
     upperLimit: 135
-    stiffness: 50000
-    damping: 500
+    stiffness: 100000
+    damping: 5000
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
@@ -839,7 +856,7 @@ ArticulationBody:
     driveType: 0
   m_LinearDamping: 0.05
   m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_JointFriction: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1619,8 +1636,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -135
     upperLimit: 135
-    stiffness: 50000
-    damping: 500
+    stiffness: 100000
+    damping: 5000
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
@@ -1645,7 +1662,7 @@ ArticulationBody:
     driveType: 0
   m_LinearDamping: 0.05
   m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_JointFriction: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1970,8 +1987,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -135
     upperLimit: 135
-    stiffness: 50000
-    damping: 500
+    stiffness: 100000
+    damping: 5000
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
@@ -1996,7 +2013,7 @@ ArticulationBody:
     driveType: 0
   m_LinearDamping: 0.05
   m_AngularDamping: 0.05
-  m_JointFriction: 0.05
+  m_JointFriction: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

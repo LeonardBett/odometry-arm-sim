@@ -36,7 +36,8 @@ public class ControleClavier : MonoBehaviour
         ArticulationDrive drive = joint.xDrive;
         
         // On incrémente ou décrémente la cible actuelle
-        drive.target += direction * vitesse * Time.fixedDeltaTime;
+        drive.target = Mathf.Clamp(
+            drive.target + direction * vitesse * Time.fixedDeltaTime, drive.lowerLimit, drive.upperLimit);
         
         joint.xDrive = drive;
     }
