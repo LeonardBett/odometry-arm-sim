@@ -476,6 +476,7 @@ MonoBehaviour:
   epaule: {fileID: 2123850679}
   coude: {fileID: 2070800223}
   poignet: {fileID: 833472876}
+  effecteur: {fileID: 1476455912}
 --- !u!1 &532936795
 GameObject:
   m_ObjectHideFlags: 0
