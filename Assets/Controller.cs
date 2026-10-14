@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ControleClavier : MonoBehaviour
+public class Controller : MonoBehaviour
 {
     public float vitesse = 45f; // Vitesse de rotation en degrés par seconde
 
@@ -34,11 +34,17 @@ public class ControleClavier : MonoBehaviour
         if (joint == null) return;
 
         ArticulationDrive drive = joint.xDrive;
-        
+
         // On incrémente ou décrémente la cible actuelle
-        drive.target = Mathf.Clamp(
-            drive.target + direction * vitesse * Time.fixedDeltaTime, drive.lowerLimit, drive.upperLimit);
-        
+        float nouvelleCible = drive.target + direction * vitesse * Time.fixedDeltaTime;
+
+        // On ne limite la cible que si l'articulation a des limites (Motion = Limited)
+        if (joint.twistLock == ArticulationDofLock.LimitedMotion)
+        {
+            nouvelleCible = Mathf.Clamp(nouvelleCible, drive.lowerLimit, drive.upperLimit);
+        }
+
+        drive.target = nouvelleCible;
         joint.xDrive = drive;
     }
 }

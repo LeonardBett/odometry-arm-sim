@@ -60,9 +60,9 @@ public class CinematiqueDirecte : MonoBehaviour
         angleCoude = coude.jointPosition[0];
         anglePoignet = poignet.jointPosition[0];
         
-        Debug.Log(angleBase);
-        Debug.Log(angleEpaule);
-        Debug.Log(angleCoude);
-        Debug.Log(anglePoignet);
+        Debug.Log(angleBase * Mathf.Rad2Deg);
+        Debug.Log(angleEpaule * Mathf.Rad2Deg);
+        Debug.Log(angleCoude * Mathf.Rad2Deg);
+        Debug.Log(anglePoignet * Mathf.Rad2Deg);
     }
 }

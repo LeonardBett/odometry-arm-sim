@@ -24,6 +24,11 @@ public class Grappin : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            objetActuel.transform.position = pointAccroche.position;
+            objetActuel.transform.rotation = pointAccroche.rotation;
+        }
     }
     
     void Attraper(GameObject objet) {
@@ -32,8 +37,6 @@ public class Grappin : MonoBehaviour
         Rigidbody rb = objet.GetComponent<Rigidbody>();
         rb.isKinematic = true;
         rb.detectCollisions = false;
-        
-        objet.transform.SetParent(pointAccroche, true);
 
         Animator animator = objet.GetComponent<Animator>();
         if (animator != null)
